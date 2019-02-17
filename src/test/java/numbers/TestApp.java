@@ -32,18 +32,23 @@ public class TestApp {
 		assertThat(toAlgebraic("IV"), is(4));
 	}
 	
+	private Map<String, Integer> values = values();
 	private int toAlgebraic(String roman) {
-		if (roman.isEmpty()) return 0;
-		Map<String, Integer> values = new HashMap<>();
-		values.put("I", 1);
-		values.put("V", 5);
-		values.put("IV", 4);
-		//
+		if (roman.isEmpty()) {
+			return 0;
+		}
 		if (roman.length() > 1) {
 			if (values.containsKey(roman.substring(0, 2))) {
 				return values.get(roman.substring(0, 2)) + toAlgebraic(roman.substring(2));
 			}
 		}
 		return values.get(roman.substring(0, 1)) + toAlgebraic(roman.substring(1));
+	}
+	private Map<String, Integer> values() {
+		Map<String, Integer> values = new HashMap<>();
+		values.put("I", 1);
+		values.put("V", 5);
+		values.put("IV", 4);
+		return values;
 	}
 }
