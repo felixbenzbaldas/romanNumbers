@@ -25,6 +25,6 @@ public class TestApp {
 		Map<String, Integer> values = new HashMap<>();
 		values.put("I", 1);
 		values.put("V", 5);
-		return values.get(roman) + toAlgebraic(roman.substring(1));
+		return values.get(roman.substring(0, 1)) + toAlgebraic(roman.substring(1));
 	}
 }
