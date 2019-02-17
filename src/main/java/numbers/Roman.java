@@ -6,9 +6,11 @@ import java.util.Map;
 public class Roman {
 	private Map<String, Integer> values = values();
 	private String roman;
+
 	private Roman(String roman) {
 		this.roman = roman;
 	}
+
 	private int toAlgebraic() {
 		if (roman.isEmpty()) {
 			return 0;
@@ -41,6 +43,7 @@ public class Roman {
 		values.put("IX", 9);
 		return values;
 	}
+
 	public static int toAlgebraic(String roman) {
 		return new Roman(roman).toAlgebraic();
 	}
