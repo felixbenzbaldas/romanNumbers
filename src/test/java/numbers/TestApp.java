@@ -21,9 +21,10 @@ public class TestApp {
 	}
 	
 	private int toAlgebraic(String roman) {
+		if (roman.isEmpty()) return 0;
 		Map<String, Integer> values = new HashMap<>();
 		values.put("I", 1);
 		values.put("V", 5);
-		return values.get(roman);
+		return values.get(roman) + toAlgebraic(roman.substring(1));
 	}
 }
