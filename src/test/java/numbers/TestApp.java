@@ -15,10 +15,15 @@ public class TestApp {
 	public void one() {
 		assertThat(toAlgebraic("I"), is(1));
 	}
+	@Test
+	public void five() {
+		assertThat(toAlgebraic("V"), is(5));
+	}
 	
 	private int toAlgebraic(String roman) {
 		Map<String, Integer> values = new HashMap<>();
 		values.put("I", 1);
+		values.put("V", 5);
 		return values.get(roman);
 	}
 }
