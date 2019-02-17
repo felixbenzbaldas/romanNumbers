@@ -24,6 +24,10 @@ public class TestApp {
 		assertThat(toAlgebraic("II"), is(2));
 	}
 	
+	@Test
+	public void six() {
+		assertThat(toAlgebraic("VI"), is(6));
+	}
 	
 	private int toAlgebraic(String roman) {
 		if (roman.isEmpty()) return 0;
