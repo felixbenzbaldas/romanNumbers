@@ -19,6 +19,11 @@ public class TestApp {
 	public void five() {
 		assertThat(toAlgebraic("V"), is(5));
 	}
+	@Test
+	public void two() {
+		assertThat(toAlgebraic("II"), is(2));
+	}
+	
 	
 	private int toAlgebraic(String roman) {
 		if (roman.isEmpty()) return 0;
