@@ -31,8 +31,13 @@ public class TestApp {
 	public void four() {
 		assertThat(toAlgebraic("IV"), is(4));
 	}
+	@Test
+	public void fancyNumber() {
+		assertThat(toAlgebraic("XXIX"), is(29));
+	}
 	
 	private Map<String, Integer> values = values();
+	
 	private int toAlgebraic(String roman) {
 		if (roman.isEmpty()) {
 			return 0;
@@ -44,11 +49,15 @@ public class TestApp {
 		}
 		return values.get(roman.substring(0, 1)) + toAlgebraic(roman.substring(1));
 	}
+	
 	private Map<String, Integer> values() {
 		Map<String, Integer> values = new HashMap<>();
 		values.put("I", 1);
 		values.put("V", 5);
+		values.put("X", 10);
+		//
 		values.put("IV", 4);
+		values.put("IX", 9);
 		return values;
 	}
 }
