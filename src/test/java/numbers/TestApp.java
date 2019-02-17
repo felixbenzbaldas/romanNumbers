@@ -48,21 +48,21 @@ public class TestApp {
 		if (roman.isEmpty()) {
 			return 0;
 		}
-		if (mustReplaceTwo()) {
-			return replaceTwo();
+		if (startsAscending()) {
+			return toAlgebraic_startsAscending();
 		}
-		return replaceOne();
+		return toAlgebraic_defaultCase();
 	}
 
-	private boolean mustReplaceTwo() {
+	private boolean startsAscending() {
 		return roman.length() > 1 && values.containsKey(roman.substring(0, 2));
 	}
 
-	private int replaceTwo() {
+	private int toAlgebraic_startsAscending() {
 		return values.get(roman.substring(0, 2)) + toAlgebraic(roman.substring(2));
 	}
 
-	private int replaceOne() {
+	private int toAlgebraic_defaultCase() {
 		return values.get(roman.substring(0, 1)) + toAlgebraic(roman.substring(1));
 	}
 
