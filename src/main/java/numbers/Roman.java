@@ -38,9 +38,13 @@ public class Roman {
 		values.put("I", 1);
 		values.put("V", 5);
 		values.put("X", 10);
+		values.put("L", 50);
+		values.put("C", 100);
 		//
 		values.put("IV", 4);
 		values.put("IX", 9);
+		values.put("XL", 40);
+		values.put("XC", 90);
 		return values;
 	}
 

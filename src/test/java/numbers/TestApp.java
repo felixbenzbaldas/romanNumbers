@@ -34,7 +34,7 @@ public class TestApp {
 
 	@Test
 	public void fancyNumber() {
-		assertThat(toAlgebraic("XXIX"), is(29));
+		assertThat(toAlgebraic("CCCXCVIII"), is(398));
 	}
 
 	private Integer toAlgebraic(String roman) {
